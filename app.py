@@ -8,7 +8,6 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 
-
 @app.route("/generate-cpp", methods=["POST"])
 def generate_cpp():
     file = request.files["quote"]
