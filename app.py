@@ -38,7 +38,6 @@ def generate_cpp():
     doc = Document(template_path)
 
     # Replace static text
-     # Replace static text
     replacements = {
         "{{SiteAddress}}": site_address,
         "{{ScopeOfWorks}}": scope_text,
