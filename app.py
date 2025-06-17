@@ -38,12 +38,13 @@ def generate_cpp():
     doc = Document(template_path)
 
     # Replace static text
- replacements = {
-    "{{SiteAddress}}": site_address,
-    "{{ScopeOfWorks}}": scope_text,
-    "{{Client}}": "LiveWest",
-    "{{JobNumber}}": job_number
-}
+     # Replace static text
+    replacements = {
+        "{{SiteAddress}}": site_address,
+        "{{ScopeOfWorks}}": scope_text,
+        "{{Client}}": "LiveWest",
+        "{{JobNumber}}": job_number
+    }
 
     for p in doc.paragraphs:
         for key, val in replacements.items():
