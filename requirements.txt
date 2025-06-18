@@ -1,6 +1,6 @@
 Flask
+flask-cors
 pandas
 python-docx
 openpyxl
 gunicorn
-flask-cors
