@@ -18,12 +18,12 @@ def generate_cpp():
         xls = pd.ExcelFile(file)
         df = xls.parse(xls.sheet_names[0], header=None)
 
-        job_number = df.iloc[1, 10] if not pd.isna(df.iloc[1, 10]) else "TBC"
-        site_address = df.iloc[10, 1] if not pd.isna(df.iloc[10, 1]) else "Site Address"
+        job_number = df.iloc[1, 10] if len(df.columns) > 10 and not pd.isna(df.iloc[1, 10]) else "TBC"
+        site_address = df.iloc[10, 1] if len(df) > 10 and not pd.isna(df.iloc[10, 1]) else "Site Address"
 
         scope_lines = []
         for i in range(15, len(df)):
-            desc = df.iloc[i, 2]
+            desc = df.iloc[i, 2] if len(df.columns) > 2 else None
             if isinstance(desc, str) and desc.strip():
                 scope_lines.append(f"- {desc.strip()}")
         scope_text = "\n".join(scope_lines) if scope_lines else "Scope of works"
